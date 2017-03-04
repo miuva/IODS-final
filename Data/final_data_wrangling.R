@@ -62,5 +62,5 @@ dim(school)
 # I will remove all rows with missing values (since I don´t know enough of imputation yet)
 complete.cases(school)
 data.frame(school[-1], comp = complete.cases(school))
-school_ <- stats::filter(school, complete.cases(school))
+school_ <- filter(school, complete.cases(school))
 
