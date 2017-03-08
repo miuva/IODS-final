@@ -119,10 +119,16 @@ $(document).ready(function () {
 </div>
 
 
+<div id="abstract" class="section level1">
+<h1>Abstract</h1>
+<p><em>School is the place were adolescent spend great part of their week. I wanted to see whether lower support provided by teachers and parents, lower felt justice and lower feel of own worth and appreciation is connected to daily or weekly mental problems including tension and nervousness, irritability or outbursts of anger, problems with falling asleep or waking up at night time, tiredness or weakness, depression and fear.</em></p>
+<p><em>I used Anne Konu´s survey data which is part of the School Well-being Profile -project. I chose 21 independent variables (gender + 20 Likert-scale questions) and 6 dependent variables (symptoms and illnesses). I used logistic regression to find the best model for each dependent variable.</em></p>
+<p><em>Only gender had a clear impact on the models created. Other questions had mostly only minor impact on the models. The most important questions were whether or not parent´s help adolescent with they homework, adolescent feel that they have meaning in school and feeling oneself appreciated but also their impact on the models were quite small. The predictive power of the models was also very low when trying to find adolescents who have mental symptoms daily or weekly.</em></p>
+</div>
 <div id="research-question" class="section level1">
 <h1>Research question</h1>
-<p>My aim is to explore if there is a connection between how well adolescents at grades 7-9 in lower secondary school get support from their teachers and families and how often they have mental symptoms. My hypothesis is that adolescents who get less support from their teachers and families, don´t feel appreciated, find their school´s rules unfair and unreasonable have more often (daily or weekly) mental symptoms which in this data are tension or nervousness, irritability or outbursts of anger, problems with falling asleep or waking up at night time, tiredness or weakness, depression or fear.</p>
-<p>The survey data I will use is part of Anne Konu´s (University of Tampere) School Well-being Profile -project which is collected in years 2015-2016. The sample is not random because schools have took part to the project by their own accord if they have wanted to investigate their well-being profile. More information about the project you can find <a href="http://www10.edu.fi/hyvinvointiprofiili/info.php?lang=">here (only in Finnish or Swedish)</a> and <a href="https://services.fsd.uta.fi/catalogue/FSD3117?lang=en&amp;study_language=en">here</a>. The data is provided by The Finnish Social Science Data Archive.</p>
+<p>My aim is to explore if there is a connection between how well adolescents at grades 7-9 in lower secondary school get support from their teachers and families and how often they have mental symptoms. My hypothesis is that adolescents who get less support from their teachers and families, who don´t feel appreciated, who find their school´s rules unfair and unreasonable have more often (daily or weekly) mental symptoms which in this data are tension or nervousness, irritability or outbursts of anger, problems with falling asleep or waking up at night time, tiredness or weakness, depression or fear.</p>
+<p>The survey data I will use is part of Anne Konu´s (University of Tampere) School Well-being Profile -project which is collected in years 2015-2016. The sample is not random because schools have took part to the project by their own accord if they have wanted to investigate their well-being profile. More information about the project you can find <a href="http://www10.edu.fi/hyvinvointiprofiili/info.php?lang=">here</a>(only in Finnish or Swedish) and <a href="https://services.fsd.uta.fi/catalogue/FSD3117?lang=en&amp;study_language=en">here</a>. The data is provided by The Finnish Social Science Data Archive.</p>
 <p>Originally this data had 91 variables and 9820 observations. For this analysis I chose the following questions:</p>
 <ul>
 <li>g1: Gender</li>
@@ -175,6 +181,7 @@ $(document).ready(function () {
 <li>4 = none</li>
 </ul>
 <p>At first I changed the options to start from number 1 (daily) and to end to number 5 (none). Then I changed them to numeric. After that I created new binomial variables of them where the options daily and weekly get value “true” and the others get value “false”.</p>
+<p>You can find my data wrangling script <a href="https://github.com/miuva/IODS-final/blob/master/Data/final_data_wrangling.R">here</a>.</p>
 <p>After all these changes there are now 34 variables and 8928 observations in this data.</p>
 <pre class="r"><code>getwd()</code></pre>
 <pre><code>## [1] &quot;/Users/mirva/IODS-final&quot;</code></pre>
@@ -687,7 +694,7 @@ loss_func1(class = school$q13_4often, prob = school$probability1)</code></pre>
 <pre><code>## [1] 0.2118056</code></pre>
 <pre class="r"><code>cv1 &lt;- cv.glm(data = school, cost = loss_func1, glmfit = sm1, K = 10)
 cv1$delta[1]</code></pre>
-<pre><code>## [1] 0.2113575</code></pre>
+<pre><code>## [1] 0.2110215</code></pre>
 <p>As we can see from the matrix above there is approximately 76% chance to get true negative and approximately 3% chance to get true positive with this model so the predictive power of it is very low if we try to find pupils who have tension or nervousness daily or weekly. The average number of wrong predictions is approximately 0.21.</p>
 </div>
 </div>
@@ -1108,7 +1115,7 @@ loss_func2(class = school$q13_5often, prob = school$probability2)</code></pre>
 <pre><code>## [1] 0.1974686</code></pre>
 <pre class="r"><code>cv2 &lt;- cv.glm(data = school, cost = loss_func2, glmfit = sm2, K = 10)
 cv2$delta[1]</code></pre>
-<pre><code>## [1] 0.1983647</code></pre>
+<pre><code>## [1] 0.1984767</code></pre>
 <p>As we can see from the matrix above the predictive power of this model is quite low if we try to predict pupils who have irritability or outbursts of anger daily or weekly. There is approximately 78% chance to get true negative and only approximately 3% chance to get true positive with this model. The average number of wrong predictions is approximately 0.20.</p>
 </div>
 </div>
@@ -1503,7 +1510,7 @@ loss_func3(class = school$q13_6often, prob = school$probability3)</code></pre>
 <pre><code>## [1] 0.2178539</code></pre>
 <pre class="r"><code>cv3 &lt;- cv.glm(data = school, cost = loss_func3, glmfit = sm3, K = 10)
 cv3$delta[1]</code></pre>
-<pre><code>## [1] 0.218638</code></pre>
+<pre><code>## [1] 0.2172939</code></pre>
 <p>If we look at the matrix above we can see that predictiwe power of this matrix is also quite low if we try to find pupils who have sleep problems daily or weekly. The chance to get true negative is approximately 76% and true positive approximately 3%. The average number of wrong predictions is approximately 0.22.</p>
 </div>
 </div>
@@ -1847,7 +1854,7 @@ loss_func4(class = school$q13_8often, prob = school$probability4)</code></pre>
 <pre><code>## [1] 0.2669131</code></pre>
 <pre class="r"><code>cv4 &lt;- cv.glm(data = school, cost = loss_func4, glmfit = sm4, K = 10)
 cv4$delta[1]</code></pre>
-<pre><code>## [1] 0.2683692</code></pre>
+<pre><code>## [1] 0.2676971</code></pre>
 <p>If we look at the matrix above we can see that the predictive power of this model is better than earlier models but it´s still not big enough to find pupils who have tiredness or weakness daily or weekly. There is approximately a 65% chance to get true negative and approximately a 8% chance to get true positive with this model. The average number of wrong predictions is approximately 0.27.</p>
 </div>
 </div>
@@ -2244,7 +2251,7 @@ loss_func5(class = school$q13_9often, prob = school$probability5)</code></pre>
 <pre><code>## [1] 0.140681</code></pre>
 <pre class="r"><code>cv5 &lt;- cv.glm(data = school, cost = loss_func5, glmfit = sm5, K = 10)
 cv5$delta[1]</code></pre>
-<pre><code>## [1] 0.141353</code></pre>
+<pre><code>## [1] 0.141129</code></pre>
 <p>If we look at the matrix above we can see that the predictive power of also this model is quite low if we try to find pupils who have depression daily or weekly. The chance to get true negative is approximately 84% and true positive approximately 2%. The average number of wrong predictions is approximately 0.14.</p>
 </div>
 </div>
@@ -2640,8 +2647,11 @@ cv6$delta[1]</code></pre>
 </div>
 <div id="conclusions-and-discussion" class="section level1">
 <h1>Conclusions and discussion</h1>
-<p>As we have seen earlier it is quite hard to predict mental symptoms which occur daily or weekly with questions about relationships with teachers and parents and the support they will provide. There some some variables which have more connection to these symptoms than others. The most important one is gender. It seems that overall boys have less or more rarely mental symptoms daily or weekly than girls.<br />
-For tension and nervousness Likert-scale questions q11_2 = “At school I´m regarded as a person who has a meaning.” and q10_3 “My parents help me with my homework if necessary.” were the most important. For irritability or outbursts of anger the same questions as for tension and nervousness and also the question q7_10 “It is easy to get along with the teachers.” were the most important. For sleep problems and also for tiredness and weakness the most important questions were q10_1 “My parents appreciate my schoolwork.” and q10_3 “My parents help me with my homework if necessary.” With depression the question q11_2 “At school I´m regarded as a person who has a meaning.” had the greatest connection and also questions q10_1 “My parents appreciate my schoolwork.”and q7_9 “The teachers treat us with justice.” had small impact on the model. Feeling fear was most connected to question q11_2 “At school I´m regarded as a person who has a meaning.” and also to question q11_1 “My work is appreciated at school.” So if we look at these results we can see that</p>
+<p>As we have seen earlier it is quite hard to predict mental symptoms which occur daily or weekly with questions about relationships with teachers and parents and the support they will provide. There some some variables which have more connection to these symptoms than others. The most important one is gender. It seems that overall boys have less or more rarely mental symptoms daily or weekly than girls.</p>
+<p>For tension and nervousness Likert-scale questions q11_2 = “At school I´m regarded as a person who has a meaning.” and q10_3 “My parents help me with my homework if necessary.” were the most important. For irritability or outbursts of anger the same questions as for tension and nervousness and also the question q7_10 “It is easy to get along with the teachers.” were the most important. For sleep problems and also for tiredness and weakness the most important questions were q10_1 “My parents appreciate my schoolwork.” and q10_3 “My parents help me with my homework if necessary.” With depression the question q11_2 “At school I´m regarded as a person who has a meaning.” had the greatest connection and also questions q10_1 “My parents appreciate my schoolwork.”and q7_9 “The teachers treat us with justice.” had small impact on the model. Feeling fear was most connected to question q11_2 “At school I´m regarded as a person who has a meaning.” and also to question q11_1 “My work is appreciated at school.” So the parents quite practical support, the feeling of having meaning in school and feeling oneself appreciated seem to be the most meaningfulfactors in respect of better mental health. It´s good to note that the relationship is two-way. For example in depression feeling having no meaning can be a symptom itself and work as a vicious circle.</p>
+<p>All in all if we look at these results we can see that only few of the questions have some relationship with the symptoms but these relationships aren´t very big (except gender). By themselves they cannot form a model which could predict mental symptoms which occur daily or weekly well enough.</p>
+<p>There are also some weaknesses in my analysis. I changed all the scales except gender to numeric. I could have used ordinal regression which seems to be the recommended option for Likert-scale questions. I also could have paid more attention to the missing values and see if there is some clear pattern between them. And if necessary I could have used imputation to fill those gaps. Hopefully for the next analysis I have more skills to make it in a better way.</p>
+<p>If we think the original purpose of this data and the project behind it we can notice that it´s purpose is to find out how the pupils see their school, their teachers and support they get and if they have some symptoms or illnesses which can influence the school days. So although the models created here weren´t so suitable the project itself provides a good tool to evaluate the quality of school and notice if there is something which needs improvement or special attention. Even though most of the pupils feel well in the school and home there are also those who feel the opposite and these adolescents need special attention and help to get as good as possible tools and support for life.</p>
 </div>
 
 
