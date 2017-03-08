@@ -140,15 +140,18 @@ g18 <- ggplot(data = school, aes(x = q11_18, fill = q1))
 g18 + geom_bar(width = .6, position = "dodge") + labs(x = "", y = "Count", title ="Q11_18", subtitle = "I receive quidance if I need it",  caption = "Figure 18: If we look at this figure we can see that the answer 4 = agree \n is the most popular one and there aren´t big differences between genders.", fill = "Gender") + theme(plot.caption = element_text(hjust = 0.5))
 
 g19 <- ggplot(data = school, aes(x = q11_19, fill = q1))
-g19 + geom_bar(width = .6, position = "dodge") + labs(x = "", y = "Count", title ="Q11_19", subtitle = "The teachers encourage me with studying",  caption = "Figure 19: Also here the positive answers are the most common ones. Here the boys seem to feel slightly more encouraged than girls.", fill = "Gender") + theme(plot.caption = element_text(hjust = 0.5))
+g19 + geom_bar(width = .6, position = "dodge") + labs(x = "", y = "Count", title ="Q11_19", subtitle = "The teachers encourage me with studying",  caption = "Figure 19: Also here the positive answers are the most common ones. \n Here the boys seem to feel slightly more encouraged than girls.", fill = "Gender") + theme(plot.caption = element_text(hjust = 0.5))
 
 g20 <- ggplot(data = school, aes(x = q11_20, fill = q1))
 g20 + geom_bar(width = .6, position = "dodge") + labs(x = "", y = "Count", title ="Q11_20", subtitle = "I reserve acknowledgement if I do well with my tasks",  caption = "Figure 20: Here the answer 4 is the most common one \n and there are no big differences between girls and boys", fill = "Gender") + theme(plot.caption = element_text(hjust = 0.5))
-
-### As we can see from the plots above most of the pupils feel that they are appreciated and supported by their teachers and parents. But in every question there is a small minority of pupils who don´t agree with these statements. This is the group which is the most interesting. Do they have more mental symptoms than those who feel worthy and and supported?
+```
+    
+As we can see from the plots above most of the pupils feel that they are appreciated and supported by their teachers and parents. But in every question there is a small minority of pupils who don´t agree with these statements.    
+    
 
 ## Symptoms and illnesses
-
+    
+```{r}
 g21 <- ggplot(data = school, aes(x = q13_4, fill = q1))
 g21 + geom_bar(width = .6, position = "dodge") + labs(x = "", y = "Count", title ="Q13_4", subtitle = "Tension or nervousness",  caption = "Figure 21: Most of the boys don´t have had tension or nervousness \n during the semester or just rarely. The situation is quite different \n among girls; many of them have these symptoms rarely or monthly \n but there are also many who have them weekly or even daily.", fill = "Gender") + theme(plot.caption = element_text(hjust = 0.5))
 
