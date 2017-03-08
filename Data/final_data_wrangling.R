@@ -1,11 +1,11 @@
 # 4.3.2017 Mirva Turkia
+# mirva.turkia@helsinki.fi
 # Introduction to Open Data Science
 
 # This is the script file for the data wrangling part of my final assignment
 
 # Here is the information of the data I will use:
 # Konu, Anne (University of Tampere): SCHOOL WELL-BEING PROFILE 2015-2016: LOWER SECONDARY SCHOOL, GRADES 7-9 [electronic data]. Version 1.0 (2016-07-18). The Finnish Social Science Data Archive [distributor]. http://urn.fi/urn:nbn:fi:fsd:T-FSD3117
-
 
 getwd()
 setwd("/Users/mirva/IODS-final/Data")

@@ -1,10 +1,14 @@
 ---
 title: "Introduction to Open Data Science: Final Assignment"
-author: "Mirva Turkia, mirva.turkia@helsinki.fi"
+author: 
+- "Mirva Turkia"
+- "mirva.turkia@helsinki.fi"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
     theme: simplex
     toc: true
+    toc_float: true
     toc_depth: 2
     fig_caption: true
     fig_width: 6
