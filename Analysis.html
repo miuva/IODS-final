@@ -694,7 +694,7 @@ loss_func1(class = school$q13_4often, prob = school$probability1)</code></pre>
 <pre><code>## [1] 0.2118056</code></pre>
 <pre class="r"><code>cv1 &lt;- cv.glm(data = school, cost = loss_func1, glmfit = sm1, K = 10)
 cv1$delta[1]</code></pre>
-<pre><code>## [1] 0.2110215</code></pre>
+<pre><code>## [1] 0.2115815</code></pre>
 <p>As we can see from the matrix above there is approximately 76% chance to get true negative and approximately 3% chance to get true positive with this model so the predictive power of it is very low if we try to find pupils who have tension or nervousness daily or weekly. The average number of wrong predictions is approximately 0.21.</p>
 </div>
 </div>
@@ -1115,7 +1115,7 @@ loss_func2(class = school$q13_5often, prob = school$probability2)</code></pre>
 <pre><code>## [1] 0.1974686</code></pre>
 <pre class="r"><code>cv2 &lt;- cv.glm(data = school, cost = loss_func2, glmfit = sm2, K = 10)
 cv2$delta[1]</code></pre>
-<pre><code>## [1] 0.1984767</code></pre>
+<pre><code>## [1] 0.1983647</code></pre>
 <p>As we can see from the matrix above the predictive power of this model is quite low if we try to predict pupils who have irritability or outbursts of anger daily or weekly. There is approximately 78% chance to get true negative and only approximately 3% chance to get true positive with this model. The average number of wrong predictions is approximately 0.20.</p>
 </div>
 </div>
@@ -1510,7 +1510,7 @@ loss_func3(class = school$q13_6often, prob = school$probability3)</code></pre>
 <pre><code>## [1] 0.2178539</code></pre>
 <pre class="r"><code>cv3 &lt;- cv.glm(data = school, cost = loss_func3, glmfit = sm3, K = 10)
 cv3$delta[1]</code></pre>
-<pre><code>## [1] 0.2172939</code></pre>
+<pre><code>## [1] 0.218414</code></pre>
 <p>If we look at the matrix above we can see that predictiwe power of this matrix is also quite low if we try to find pupils who have sleep problems daily or weekly. The chance to get true negative is approximately 76% and true positive approximately 3%. The average number of wrong predictions is approximately 0.22.</p>
 </div>
 </div>
@@ -1854,7 +1854,7 @@ loss_func4(class = school$q13_8often, prob = school$probability4)</code></pre>
 <pre><code>## [1] 0.2669131</code></pre>
 <pre class="r"><code>cv4 &lt;- cv.glm(data = school, cost = loss_func4, glmfit = sm4, K = 10)
 cv4$delta[1]</code></pre>
-<pre><code>## [1] 0.2676971</code></pre>
+<pre><code>## [1] 0.2673611</code></pre>
 <p>If we look at the matrix above we can see that the predictive power of this model is better than earlier models but it´s still not big enough to find pupils who have tiredness or weakness daily or weekly. There is approximately a 65% chance to get true negative and approximately a 8% chance to get true positive with this model. The average number of wrong predictions is approximately 0.27.</p>
 </div>
 </div>
@@ -2251,7 +2251,7 @@ loss_func5(class = school$q13_9often, prob = school$probability5)</code></pre>
 <pre><code>## [1] 0.140681</code></pre>
 <pre class="r"><code>cv5 &lt;- cv.glm(data = school, cost = loss_func5, glmfit = sm5, K = 10)
 cv5$delta[1]</code></pre>
-<pre><code>## [1] 0.141129</code></pre>
+<pre><code>## [1] 0.141353</code></pre>
 <p>If we look at the matrix above we can see that the predictive power of also this model is quite low if we try to find pupils who have depression daily or weekly. The chance to get true negative is approximately 84% and true positive approximately 2%. The average number of wrong predictions is approximately 0.14.</p>
 </div>
 </div>
