@@ -57,6 +57,8 @@ Questions from q13_4 to q13_10 were also categorical and their options where the
 * 4 = none
     
 At first I changed the options to start from number 1 (daily) and to end to number 5 (none). Then I changed them to numeric. After that I created new binomial variables of them where the options daily and weekly get value "true" and the others get value "false".    
+     
+You can find my data wrangling script [here](https://github.com/miuva/IODS-final/blob/master/Data/final_data_wrangling.R).
     
 After all these changes there are now 34 variables and 8928 observations in this data.    
     
